@@ -90,6 +90,17 @@ export function usePlayers() {
   });
 }
 
+export function usePlayerById(id: string) {
+  return useQuery({
+    queryKey: ["players", id],
+    queryFn: async () => {
+      await delay(200);
+      return players.find((p) => p.id === id) || null;
+    },
+    enabled: !!id,
+  });
+}
+
 export function usePlayersByPosition() {
   return useQuery({
     queryKey: ["players", "byPosition"],
@@ -104,6 +115,17 @@ export function useStaff() {
   return useQuery({
     queryKey: ["staff"],
     queryFn: fetchStaff,
+  });
+}
+
+export function useStaffById(id: string) {
+  return useQuery({
+    queryKey: ["staff", id],
+    queryFn: async () => {
+      await delay(200);
+      return staff.find((s) => s.id === id) || null;
+    },
+    enabled: !!id,
   });
 }
 

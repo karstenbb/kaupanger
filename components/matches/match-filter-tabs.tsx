@@ -27,15 +27,17 @@ export function MatchFilterTabs({ filter, onFilterChange }: MatchFilterTabsProps
           size="sm"
           onClick={() => onFilterChange(f.value)}
           className={cn(
-            "relative",
-            filter === f.value && "bg-surface border-surface-light"
+            "relative backdrop-blur-sm transition-all",
+            filter === f.value 
+              ? "bg-primary/20 border-primary/40 text-primary" 
+              : "bg-white/5 border-white/20 text-text-secondary hover:bg-white/10 hover:text-text-primary"
           )}
         >
           {f.label}
           {filter === f.value && (
             <motion.div
               layoutId="activeFilter"
-              className="absolute inset-0 bg-surface rounded-lg -z-10"
+              className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg -z-10 border border-primary/30"
               transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
             />
           )}

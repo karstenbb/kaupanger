@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, Filter, Loader2, Plus } from "lucide-react";
 import { ResultCard } from "@/components/results/result-card";
@@ -23,14 +24,18 @@ export function ResultaterContent() {
     <div className="px-4 space-y-6">
       {/* Header */}
       <div className="flex flex-col items-center pt-4 pb-2">
-        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-background-card to-background-elevated border-2 border-primary/30 flex items-center justify-center">
-          <div className="w-14 h-14 rounded-full bg-surface flex items-center justify-center">
-            <span className="text-lg font-bold text-primary">K.I.L</span>
-          </div>
+        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-background-card to-background-elevated border-2 border-primary/30 flex items-center justify-center p-1">
+          <Image
+            src="/images/kil-logo.png"
+            alt="K.I.L Logo"
+            width={72}
+            height={72}
+            className="rounded-full object-contain"
+          />
         </div>
         <h1 className="text-xl font-bold text-text-primary mt-4">K.I.L Fotball</h1>
         <p className="text-sm text-text-secondary uppercase tracking-wide">
-          Resultater fra fjoråret
+          Resultater 4. divisjon
         </p>
       </div>
 

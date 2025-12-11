@@ -3,22 +3,25 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { Home, Calendar, Users, ShoppingBag } from "lucide-react";
+import { Home, Calendar, Users, Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/" as const, label: "Heim", icon: Home },
   { href: "/kamper" as const, label: "Kamper", icon: Calendar },
   { href: "/tropp" as const, label: "Tropp", icon: Users },
-  { href: "/butikk" as const, label: "Butikk", icon: ShoppingBag },
+  { href: "/resultater" as const, label: "Resultat", icon: Trophy },
 ];
 
 export function BottomNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-background-elevated/95 backdrop-blur-xl border-t border-surface-border safe-area-pb">
-      <div className="flex items-center justify-around h-16 max-w-lg mx-auto px-4">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 safe-area-pb">
+      {/* Glass background */}
+      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/80 to-transparent backdrop-blur-xl" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="relative flex items-center justify-around h-16 max-w-lg mx-auto px-4">
         {navItems.map((item) => {
           const isActive = pathname === item.href || 
             (item.href !== "/" && pathname.startsWith(item.href));
@@ -37,7 +40,7 @@ export function BottomNav() {
                 {isActive && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute -inset-2 bg-primary/20 rounded-xl"
+                    className="absolute -inset-2 bg-gradient-to-br from-primary/30 to-primary/10 rounded-xl border border-primary/20 shadow-glow-primary"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}

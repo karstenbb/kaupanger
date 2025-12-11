@@ -25,6 +25,6 @@ export const useAppStore = create<AppState>((set) => ({
   setRosterTab: (tab) => set({ rosterTab: tab }),
 
   // Selected season
-  selectedSeason: "2023-24",
+  selectedSeason: "2025",
   setSelectedSeason: (season) => set({ selectedSeason: season }),
 }));

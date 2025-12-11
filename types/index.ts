@@ -36,10 +36,21 @@ export interface Player {
   image?: string;
   isInjured?: boolean;
   injuryNote?: string;
+  appearances?: number;
+  goals?: number;
+  yellowCards?: number;
+  redCards?: number;
 }
 
 // Staff types
 export type StaffRole = "head_coach" | "assistant_coach" | "goalkeeper_coach" | "physio" | "manager";
+
+export interface StaffRoleItem {
+  title: string;
+  team?: string;
+  club: string;
+  krets: string;
+}
 
 export interface Staff {
   id: string;
@@ -48,6 +59,8 @@ export interface Staff {
   role: StaffRole;
   roleLabel: string;
   image?: string;
+  fiksId?: string;
+  roles?: StaffRoleItem[];
 }
 
 // Result types
@@ -62,8 +75,11 @@ export interface HistoricalMatch {
   venueType: "home" | "away" | "neutral";
   homeScore: number;
   awayScore: number;
+  halfTimeHome?: number;
+  halfTimeAway?: number;
   result: MatchResult;
   season: string;
+  fiksId?: string;
 }
 
 // Season type

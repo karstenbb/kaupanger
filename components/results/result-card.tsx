@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { HistoricalMatch } from "@/types";
 import { getResultLabel } from "@/lib/utils";
-import { MapPin } from "lucide-react";
+import { MapPin, ChevronRight } from "lucide-react";
 
 interface ResultCardProps {
   match: HistoricalMatch;
@@ -11,7 +13,7 @@ interface ResultCardProps {
 }
 
 export function ResultCard({ match, index }: ResultCardProps) {
-  const isHomeGame = match.venueType === "home";
+  const router = useRouter();
   
   // Determine if K.I.L is home or away team
   const isKilHome = match.homeTeam.shortName === "K.I.L";
@@ -28,17 +30,22 @@ export function ResultCard({ match, index }: ResultCardProps) {
     }).toUpperCase();
   };
 
+  const handleClick = () => {
+    router.push(`/resultater/${match.id}`);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.08 }}
-      className="p-4 rounded-2xl bg-background-card border border-surface-border"
+      onClick={handleClick}
+      className="p-4 rounded-2xl glass-card glass-card-hover cursor-pointer active:scale-[0.98]"
     >
       {/* Header - Venue & Date */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <MapPin className="w-4 h-4 text-text-muted" />
+          <MapPin className="w-4 h-4 text-secondary-light" />
           <span className="text-xs text-text-secondary uppercase tracking-wide">
             {match.venue}
           </span>
@@ -50,15 +57,21 @@ export function ResultCard({ match, index }: ResultCardProps) {
       <div className="flex items-center justify-between">
         {/* K.I.L */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-surface flex items-center justify-center">
-            <span className="text-sm font-bold text-primary">K.I.L</span>
+          <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center overflow-hidden">
+            <Image
+              src="/images/kil-logo.png"
+              alt="K.I.L"
+              width={36}
+              height={36}
+              className="object-contain"
+            />
           </div>
           <span className="font-medium text-text-primary">K.I.L</span>
         </div>
 
         {/* Score */}
         <div className="flex items-center gap-3">
-          <span className="text-2xl font-bold text-text-primary">{kilScore}</span>
+          <span className="text-2xl font-bold gradient-text">{kilScore}</span>
           <span className="text-text-muted">-</span>
           <span className="text-2xl font-bold text-text-primary">{opponentScore}</span>
         </div>
@@ -66,8 +79,8 @@ export function ResultCard({ match, index }: ResultCardProps) {
         {/* Opponent */}
         <div className="flex items-center gap-3">
           <span className="font-medium text-text-primary text-right">{opponent.shortName}</span>
-          <div className="w-10 h-10 rounded-full bg-accent-cyan/20 flex items-center justify-center">
-            <span className="text-sm font-bold text-accent-cyan">
+          <div className="w-10 h-10 rounded-full bg-secondary/30 backdrop-blur-sm border border-secondary/40 flex items-center justify-center">
+            <span className="text-sm font-bold text-secondary-light">
               {opponent.shortName.substring(0, 2).toUpperCase()}
             </span>
           </div>
@@ -75,16 +88,17 @@ export function ResultCard({ match, index }: ResultCardProps) {
       </div>
 
       {/* Result Badge */}
-      <div className="flex justify-center mt-4">
+      <div className="flex justify-center items-center mt-4 gap-2">
         <span
-          className={`px-4 py-1 rounded-full text-xs font-semibold text-background ${
-            match.result === "win" ? "bg-status-win" : 
-            match.result === "loss" ? "bg-status-loss" : 
-            "bg-status-draw"
+          className={`px-4 py-1 rounded-full text-xs font-semibold backdrop-blur-sm ${
+            match.result === "win" ? "badge-win" : 
+            match.result === "loss" ? "badge-loss" : 
+            "badge-draw"
           }`}
         >
           {getResultLabel(match.result)}
         </span>
+        <ChevronRight className="w-4 h-4 text-text-muted" />
       </div>
     </motion.div>
   );

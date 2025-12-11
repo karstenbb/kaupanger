@@ -21,8 +21,8 @@ export function KamperContent() {
         animate={{ opacity: 1, y: 0 }}
         className="flex items-center gap-2"
       >
-        <Calendar className="w-5 h-5 text-text-secondary" />
-        <h2 className="text-lg font-bold text-text-primary">Kommende Kamper</h2>
+        <Calendar className="w-5 h-5 text-secondary-light" />
+        <h2 className="text-lg font-bold gradient-text">Kommende Kamper</h2>
       </motion.div>
 
       {/* Next Match Card */}
