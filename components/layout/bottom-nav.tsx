@@ -20,7 +20,7 @@ export function BottomNav() {
     <nav className="fixed bottom-0 left-0 right-0 z-50 safe-area-pb">
       {/* Glass background */}
       <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/80 to-transparent backdrop-blur-xl" />
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="relative flex items-center justify-around h-16 max-w-lg mx-auto px-4">
         {navItems.map((item) => {
           const isActive = pathname === item.href || 
@@ -40,7 +40,7 @@ export function BottomNav() {
                 {isActive && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute -inset-2 bg-gradient-to-br from-primary/30 to-primary/10 rounded-xl border border-primary/20 shadow-glow-primary"
+                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -54,7 +54,7 @@ export function BottomNav() {
               <span
                 className={cn(
                   "text-xs font-medium transition-colors",
-                  isActive ? "text-primary" : "text-text-muted"
+                  isActive ? "text-text-primary" : "text-text-muted"
                 )}
               >
                 {item.label}
