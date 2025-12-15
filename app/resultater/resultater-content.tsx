@@ -47,7 +47,7 @@ export function ResultaterContent() {
 
   const handleOpenTable = () => {
     setFabOpen(false);
-    window.open("https://www.fotball.no/fotballdata/turnering/tabell/?fiksId=189466", "_blank");
+    window.open("https://www.fotball.no/fotballdata/lag/hjem/?fiksId=192266&underside=tabeller", "_blank");
   };
 
   return (
