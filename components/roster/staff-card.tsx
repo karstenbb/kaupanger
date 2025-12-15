@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Staff } from "@/types";
 import { ChevronRight } from "lucide-react";
+import { Route } from "next";
 
 interface StaffCardProps {
   staff: Staff;
@@ -12,7 +14,7 @@ interface StaffCardProps {
 
 export function StaffCard({ staff, index }: StaffCardProps) {
   return (
-    <Link href={`/tropp/staff/${staff.id}` as any}>
+    <Link href={`/tropp/staff/${staff.id}` as Route}>
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -23,9 +25,11 @@ export function StaffCard({ staff, index }: StaffCardProps) {
           {/* Staff Image */}
           <div className="w-12 h-12 rounded-full bg-gradient-to-br from-secondary/40 to-accent/30 backdrop-blur-sm border border-secondary/30 flex items-center justify-center overflow-hidden">
             {staff.image ? (
-              <img
+              <Image
                 src={staff.image}
                 alt={`${staff.firstName} ${staff.lastName}`}
+                width={48}
+                height={48}
                 className="w-full h-full object-cover"
               />
             ) : (

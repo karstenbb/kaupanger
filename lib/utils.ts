@@ -64,3 +64,34 @@ export function getResultLabel(result: "win" | "draw" | "loss"): string {
       return "Tap";
   }
 }
+
+// Godkjende domene for eksterne lenker
+const ALLOWED_DOMAINS = [
+  "fotball.no",
+  "www.fotball.no",
+  "instagram.com",
+  "www.instagram.com",
+  "facebook.com",
+  "www.facebook.com",
+  "maps.google.com",
+];
+
+/**
+ * Opnar ein ekstern URL trygt.
+ * Validerer at domenet er på godkjenningslista før opning.
+ */
+export function openExternalUrl(url: string): void {
+  try {
+    const parsedUrl = new URL(url);
+    const hostname = parsedUrl.hostname;
+    
+    if (!ALLOWED_DOMAINS.includes(hostname)) {
+      console.warn(`Blokkert forsøk på å opne ikkje-godkjent domene: ${hostname}`);
+      return;
+    }
+    
+    window.open(url, "_blank", "noopener,noreferrer");
+  } catch {
+    console.error("Ugyldig URL:", url);
+  }
+}

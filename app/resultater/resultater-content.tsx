@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, Filter, Loader2, Plus, Share2, ExternalLink, Trophy, X } from "lucide-react";
+import { Calendar, Filter, Loader2, Plus, Share2, ExternalLink, Trophy } from "lucide-react";
 import { useState } from "react";
 import { ResultCard } from "@/components/results/result-card";
 import {
@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useHistoricalMatches, useSeasons } from "@/lib/api";
 import { useAppStore } from "@/lib/store";
+import { openExternalUrl } from "@/lib/utils";
 
 export function ResultaterContent() {
   const { selectedSeason, setSelectedSeason } = useAppStore();
@@ -31,8 +32,8 @@ export function ResultaterContent() {
           text: `Sjekk ut resultata til Kaupanger IL i ${selectedSeason}!`,
           url: window.location.href,
         });
-      } catch (err) {
-        // User cancelled
+      } catch {
+        // Brukar avbraut
       }
     } else {
       navigator.clipboard.writeText(window.location.href);
@@ -42,12 +43,12 @@ export function ResultaterContent() {
 
   const handleOpenFotballNo = () => {
     setFabOpen(false);
-    window.open("https://www.fotball.no/fotballdata/lag/kamper-og-resultater/?fiksId=192266", "_blank");
+    openExternalUrl("https://www.fotball.no/fotballdata/lag/kamper-og-resultater/?fiksId=192266");
   };
 
   const handleOpenTable = () => {
     setFabOpen(false);
-    window.open("https://www.fotball.no/fotballdata/lag/hjem/?fiksId=192266&underside=tabeller", "_blank");
+    openExternalUrl("https://www.fotball.no/fotballdata/lag/hjem/?fiksId=192266&underside=tabeller");
   };
 
   return (

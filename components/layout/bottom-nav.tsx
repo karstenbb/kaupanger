@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import { Home, Calendar, Users, Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
 

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Match } from "@/types";
-import { cn, getCountdown } from "@/lib/utils";
+import { getCountdown } from "@/lib/utils";
 import { MapPin } from "lucide-react";
 import { useWeather } from "@/lib/api";
 import { getWeatherEmoji } from "@/types/weather";

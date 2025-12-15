@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, User, Briefcase, MapPin, Loader2, ExternalLink } from "lucide-react";
 import { useStaffById } from "@/lib/api";
 import { Button } from "@/components/ui/button";
@@ -61,9 +62,11 @@ export function StaffDetailContent({ staffId }: StaffDetailContentProps) {
         <div className={`w-28 h-28 rounded-full bg-gradient-to-br ${roleColor} p-1`}>
           <div className="w-full h-full rounded-full bg-background-card flex items-center justify-center overflow-hidden">
             {staff.image ? (
-              <img
+              <Image
                 src={staff.image}
                 alt={`${staff.firstName} ${staff.lastName}`}
+                width={112}
+                height={112}
                 className="w-full h-full object-cover"
               />
             ) : (

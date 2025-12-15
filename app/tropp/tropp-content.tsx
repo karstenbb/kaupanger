@@ -8,6 +8,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { PlayerSection } from "@/components/roster/player-section";
 import { StaffCard } from "@/components/roster/staff-card";
 import { usePlayersByPosition, useStaff } from "@/lib/api";
+import { openExternalUrl } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -59,8 +60,8 @@ export function TroppContent() {
           text: "Sjekk ut troppen til Kaupanger IL!",
           url: window.location.href,
         });
-      } catch (err) {
-        // User cancelled or error
+      } catch {
+        // Brukar avbraut
       }
     } else {
       // Fallback: copy to clipboard
@@ -75,7 +76,7 @@ export function TroppContent() {
   };
 
   const handleOpenFotballNo = () => {
-    window.open("https://www.fotball.no/fotballdata/lag/hjem/?fiksId=192266", "_blank");
+    openExternalUrl("https://www.fotball.no/fotballdata/lag/hjem/?fiksId=192266");
   };
 
   return (
@@ -166,7 +167,7 @@ export function TroppContent() {
               >
                 {searchQuery && (
                   <p className="text-sm text-text-secondary">
-                    {totalResults} {totalResults === 1 ? "resultat" : "resultat"} for "{searchQuery}"
+                    {totalResults} {totalResults === 1 ? "resultat" : "resultat"} for &quot;{searchQuery}&quot;
                   </p>
                 )}
                 {filteredPlayers.keepers.length > 0 && (
@@ -203,7 +204,7 @@ export function TroppContent() {
                 )}
                 {totalResults === 0 && searchQuery && (
                   <div className="text-center py-12">
-                    <p className="text-text-secondary">Ingen spelarar funne for "{searchQuery}"</p>
+                    <p className="text-text-secondary">Ingen spelarar funne for &quot;{searchQuery}&quot;</p>
                   </div>
                 )}
               </motion.div>

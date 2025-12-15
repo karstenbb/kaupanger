@@ -3,10 +3,8 @@ import {
   upcomingMatches, 
   players, 
   staff, 
-  historicalMatches, 
   seasons,
   getPlayersByPosition,
-  filterMatches,
   getResultsBySeason
 } from "@/lib/mock-data";
 import { Match, Player, Staff, HistoricalMatch, Season, MatchFilter } from "@/types";
