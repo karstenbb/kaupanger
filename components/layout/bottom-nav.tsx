@@ -36,21 +36,12 @@ export function BottomNav() {
                 "transition-colors duration-200"
               )}
             >
-              <div className="relative">
-                {isActive && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
+              <Icon
+                className={cn(
+                  "w-5 h-5 transition-colors",
+                  isActive ? "text-primary" : "text-text-muted"
                 )}
-                <Icon
-                  className={cn(
-                    "w-5 h-5 relative z-10 transition-colors",
-                    isActive ? "text-primary" : "text-text-muted"
-                  )}
-                />
-              </div>
+              />
               <span
                 className={cn(
                   "text-xs font-medium transition-colors",
