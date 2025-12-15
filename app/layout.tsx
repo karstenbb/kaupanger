@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { QueryProvider } from "@/lib/providers";
 import { BottomNav } from "@/components/layout/bottom-nav";
+import { CookieConsent } from "@/components/cookie-consent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
             {children}
           </main>
           <BottomNav />
+          <CookieConsent />
         </QueryProvider>
       </body>
     </html>
