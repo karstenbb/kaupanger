@@ -8,8 +8,27 @@ export const clubTeam: Team = {
   logo: "/images/kil-logo.png",
 };
 
-// Upcoming matches - Sesongen 2025 er ferdig, nye kampar kjem våren 2026
-export const upcomingMatches: Match[] = [];
+// Opponent teams
+export const vikTeam: Team = {
+  id: "vik",
+  name: "Vik",
+  shortName: "Vik",
+  logo: "https://images.fotball.no/clublogos/927.png",
+};
+
+// Upcoming matches - NM Kvalifisering 2026
+export const upcomingMatches: Match[] = [
+  {
+    id: "nm-2026-1",
+    homeTeam: vikTeam,
+    awayTeam: clubTeam,
+    date: "2026-03-21",
+    time: "14:00",
+    venue: "Vik kunstgras",
+    location: "away",
+    status: "upcoming",
+  },
+];
 
 // Players
 export const players: Player[] = [
