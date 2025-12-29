@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Calendar, Trophy, ChevronRight } from "lucide-react";
-import { historicalMatches } from "@/lib/mock-data";
+import { historicalMatches, upcomingMatches } from "@/lib/mock-data";
 import { getResultLabel } from "@/lib/utils";
+import { NextMatchCard } from "@/components/matches/next-match-card";
 
 export function HomeContent() {
   const router = useRouter();
@@ -16,6 +17,7 @@ export function HomeContent() {
     .slice(0, 5);
   
   const lastMatch = recentMatches[0];
+  const nextMatch = upcomingMatches[0];
 
   // Kalkuler sesongstatistikk
   const wins = historicalMatches.filter(m => m.result === "win").length;
@@ -40,16 +42,15 @@ export function HomeContent() {
 
   return (
     <div className="px-4 space-y-6">
-      {/* Season Status Banner */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="glass-card glass-card-hover p-4 text-center relative overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10" />
-        <p className="relative text-primary font-semibold">⚽ Sesongen 2025 er ferdig</p>
-        <p className="relative text-text-secondary text-sm mt-1">Ny sesong startar april 2026</p>
-      </motion.div>
+      {/* Next Match */}
+      {nextMatch && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <NextMatchCard match={nextMatch} />
+        </motion.div>
+      )}
 
       {/* Season Stats */}
       <motion.div
