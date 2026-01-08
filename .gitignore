@@ -1,2 +1,4 @@
 node_modules
 .next/
+# Generated data (oppdaterast av cron job)
+public/data/matches.json
