@@ -16,8 +16,86 @@ export const vikTeam: Team = {
   logo: "https://images.fotball.no/clublogos/927.png",
 };
 
-// Upcoming matches - NM Kvalifisering 2026
+export const jolsterTeam: Team = {
+  id: "jolster",
+  name: "Jølster",
+  shortName: "Jølster",
+  logo: "https://images.fotball.no/clublogos/921.png",
+};
+
+export const floroTeam: Team = {
+  id: "floro",
+  name: "Florø",
+  shortName: "Florø",
+  logo: "https://images.fotball.no/clublogos/917.png",
+};
+
+export const daleTeam: Team = {
+  id: "dale",
+  name: "Dale",
+  shortName: "Dale",
+  logo: "https://images.fotball.no/clublogos/914.png",
+};
+
+export const ardalTeam: Team = {
+  id: "ardal",
+  name: "Årdal",
+  shortName: "Årdal",
+  logo: "https://images.fotball.no/clublogos/910.png",
+};
+
+export const hoyangTeam: Team = {
+  id: "hoyang",
+  name: "Høyang",
+  shortName: "Høyang",
+  logo: "https://images.fotball.no/clublogos/920.png",
+};
+
+export const fjoraTeam: Team = {
+  id: "fjora",
+  name: "Fjøra",
+  shortName: "Fjøra",
+  logo: "https://images.fotball.no/clublogos/916.png",
+};
+
+export const forde2Team: Team = {
+  id: "forde2",
+  name: "Førde 2",
+  shortName: "Førde 2",
+  logo: "https://images.fotball.no/clublogos/918.png",
+};
+
+export const maloyTeam: Team = {
+  id: "maloy",
+  name: "Måløy",
+  shortName: "Måløy",
+  logo: "https://images.fotball.no/clublogos/924.png",
+};
+
+export const sandaneTeam: Team = {
+  id: "sandane",
+  name: "Sandane",
+  shortName: "Sandane",
+  logo: "https://images.fotball.no/clublogos/929.png",
+};
+
+export const strynTeam: Team = {
+  id: "stryn",
+  name: "Stryn",
+  shortName: "Stryn",
+  logo: "https://images.fotball.no/clublogos/935.png",
+};
+
+export const eidTeam: Team = {
+  id: "eid",
+  name: "Eid",
+  shortName: "Eid",
+  logo: "https://images.fotball.no/clublogos/915.png",
+};
+
+// Upcoming matches - Sesong 2026
 export const upcomingMatches: Match[] = [
+  // NM Kvalifisering
   {
     id: "nm-2026-1",
     homeTeam: vikTeam,
@@ -27,6 +105,250 @@ export const upcomingMatches: Match[] = [
     venue: "Vik kunstgras",
     location: "away",
     status: "upcoming",
+    fiksId: "8985091",
+  },
+  // 4. divisjon 2026
+  {
+    id: "4div-2026-1",
+    homeTeam: clubTeam,
+    awayTeam: jolsterTeam,
+    date: "2026-04-11",
+    time: "15:00",
+    venue: "Kaupanger Idrettspark",
+    location: "home",
+    status: "upcoming",
+    fiksId: "8980772",
+  },
+  {
+    id: "4div-2026-2",
+    homeTeam: floroTeam,
+    awayTeam: clubTeam,
+    date: "2026-04-18",
+    time: "15:00",
+    venue: "Florø stadion",
+    location: "away",
+    status: "upcoming",
+    fiksId: "8980779",
+  },
+  {
+    id: "4div-2026-3",
+    homeTeam: clubTeam,
+    awayTeam: daleTeam,
+    date: "2026-04-25",
+    time: "15:00",
+    venue: "Kaupanger Idrettspark",
+    location: "home",
+    status: "upcoming",
+    fiksId: "8980785",
+  },
+  {
+    id: "4div-2026-4",
+    homeTeam: clubTeam,
+    awayTeam: ardalTeam,
+    date: "2026-05-02",
+    time: "15:00",
+    venue: "Kaupanger Idrettspark",
+    location: "home",
+    status: "upcoming",
+    fiksId: "8980792",
+  },
+  {
+    id: "4div-2026-5",
+    homeTeam: hoyangTeam,
+    awayTeam: clubTeam,
+    date: "2026-05-09",
+    time: "15:00",
+    venue: "Sletta",
+    location: "away",
+    status: "upcoming",
+    fiksId: "8980796",
+  },
+  {
+    id: "4div-2026-6",
+    homeTeam: clubTeam,
+    awayTeam: fjoraTeam,
+    date: "2026-05-16",
+    time: "15:00",
+    venue: "Kaupanger Idrettspark",
+    location: "home",
+    status: "upcoming",
+    fiksId: "8980799",
+  },
+  {
+    id: "4div-2026-7",
+    homeTeam: forde2Team,
+    awayTeam: clubTeam,
+    date: "2026-05-23",
+    time: "15:00",
+    venue: "Hafstadparken",
+    location: "away",
+    status: "upcoming",
+    fiksId: "8980806",
+  },
+  {
+    id: "4div-2026-8",
+    homeTeam: clubTeam,
+    awayTeam: maloyTeam,
+    date: "2026-05-30",
+    time: "15:00",
+    venue: "Kaupanger Idrettspark",
+    location: "home",
+    status: "upcoming",
+    fiksId: "8980812",
+  },
+  {
+    id: "4div-2026-9",
+    homeTeam: sandaneTeam,
+    awayTeam: clubTeam,
+    date: "2026-06-13",
+    time: "15:00",
+    venue: "Sandane Idrettspark",
+    location: "away",
+    status: "upcoming",
+    fiksId: "8980818",
+  },
+  {
+    id: "4div-2026-10",
+    homeTeam: clubTeam,
+    awayTeam: strynTeam,
+    date: "2026-06-20",
+    time: "15:00",
+    venue: "Kaupanger Idrettspark",
+    location: "home",
+    status: "upcoming",
+    fiksId: "8980825",
+  },
+  {
+    id: "4div-2026-11",
+    homeTeam: eidTeam,
+    awayTeam: clubTeam,
+    date: "2026-08-08",
+    time: "15:00",
+    venue: "Eid idrettspark",
+    location: "away",
+    status: "upcoming",
+    fiksId: "8980831",
+  },
+  {
+    id: "4div-2026-12",
+    homeTeam: clubTeam,
+    awayTeam: floroTeam,
+    date: "2026-08-15",
+    time: "15:00",
+    venue: "Kaupanger Idrettspark",
+    location: "home",
+    status: "upcoming",
+    fiksId: "8980838",
+  },
+  {
+    id: "4div-2026-13",
+    homeTeam: daleTeam,
+    awayTeam: clubTeam,
+    date: "2026-08-22",
+    time: "15:00",
+    venue: "Dingemoen idrettspark",
+    location: "away",
+    status: "upcoming",
+    fiksId: "8980844",
+  },
+  {
+    id: "4div-2026-14",
+    homeTeam: jolsterTeam,
+    awayTeam: clubTeam,
+    date: "2026-08-29",
+    time: "15:00",
+    venue: "Vassenden Idrettspark",
+    location: "away",
+    status: "upcoming",
+    fiksId: "8980851",
+  },
+  {
+    id: "4div-2026-15",
+    homeTeam: ardalTeam,
+    awayTeam: clubTeam,
+    date: "2026-09-05",
+    time: "15:00",
+    venue: "Jotun stadion",
+    location: "away",
+    status: "upcoming",
+    fiksId: "8980857",
+  },
+  {
+    id: "4div-2026-16",
+    homeTeam: clubTeam,
+    awayTeam: hoyangTeam,
+    date: "2026-09-12",
+    time: "15:00",
+    venue: "Kaupanger Idrettspark",
+    location: "home",
+    status: "upcoming",
+    fiksId: "8980864",
+  },
+  {
+    id: "4div-2026-17",
+    homeTeam: fjoraTeam,
+    awayTeam: clubTeam,
+    date: "2026-09-19",
+    time: "15:00",
+    venue: "Fosshaugane Campus",
+    location: "away",
+    status: "upcoming",
+    fiksId: "8980870",
+  },
+  {
+    id: "4div-2026-18",
+    homeTeam: clubTeam,
+    awayTeam: forde2Team,
+    date: "2026-09-26",
+    time: "15:00",
+    venue: "Kaupanger Idrettspark",
+    location: "home",
+    status: "upcoming",
+    fiksId: "8980877",
+  },
+  {
+    id: "4div-2026-19",
+    homeTeam: maloyTeam,
+    awayTeam: clubTeam,
+    date: "2026-10-03",
+    time: "15:00",
+    venue: "Skavøypoll Stadion",
+    location: "away",
+    status: "upcoming",
+    fiksId: "8980883",
+  },
+  {
+    id: "4div-2026-20",
+    homeTeam: clubTeam,
+    awayTeam: sandaneTeam,
+    date: "2026-10-10",
+    time: "14:00",
+    venue: "Kaupanger Idrettspark",
+    location: "home",
+    status: "upcoming",
+    fiksId: "8980890",
+  },
+  {
+    id: "4div-2026-21",
+    homeTeam: strynTeam,
+    awayTeam: clubTeam,
+    date: "2026-10-17",
+    time: "14:00",
+    venue: "Stryn stadion",
+    location: "away",
+    status: "upcoming",
+    fiksId: "8980896",
+  },
+  {
+    id: "4div-2026-22",
+    homeTeam: clubTeam,
+    awayTeam: eidTeam,
+    date: "2026-10-24",
+    time: "14:00",
+    venue: "Kaupanger Idrettspark",
+    location: "home",
+    status: "upcoming",
+    fiksId: "8980903",
   },
 ];
 

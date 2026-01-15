@@ -21,6 +21,7 @@ export interface Match {
   homeScore?: number;
   awayScore?: number;
   ticketUrl?: string;
+  fiksId?: string;
 }
 
 // Player types
