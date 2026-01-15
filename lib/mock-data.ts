@@ -20,77 +20,77 @@ export const jolsterTeam: Team = {
   id: "jolster",
   name: "Jølster",
   shortName: "Jølster",
-  logo: "https://images.fotball.no/clublogos/921.png",
+  logo: undefined, // Jølster har ingen logo på fotball.no
 };
 
 export const floroTeam: Team = {
   id: "floro",
   name: "Florø",
   shortName: "Florø",
-  logo: "https://images.fotball.no/clublogos/917.png",
+  logo: "https://images.fotball.no/clublogos/918.png",
 };
 
 export const daleTeam: Team = {
   id: "dale",
   name: "Dale",
   shortName: "Dale",
-  logo: "https://images.fotball.no/clublogos/914.png",
+  logo: "https://images.fotball.no/clublogos/946.png",
 };
 
 export const ardalTeam: Team = {
   id: "ardal",
   name: "Årdal",
   shortName: "Årdal",
-  logo: "https://images.fotball.no/clublogos/910.png",
+  logo: "https://images.fotball.no/clublogos/1952.png",
 };
 
 export const hoyangTeam: Team = {
   id: "hoyang",
   name: "Høyang",
   shortName: "Høyang",
-  logo: "https://images.fotball.no/clublogos/920.png",
+  logo: "https://images.fotball.no/clublogos/924.png",
 };
 
 export const fjoraTeam: Team = {
   id: "fjora",
   name: "Fjøra",
   shortName: "Fjøra",
-  logo: "https://images.fotball.no/clublogos/916.png",
+  logo: "https://images.fotball.no/clublogos/931.png",
 };
 
 export const forde2Team: Team = {
   id: "forde2",
   name: "Førde 2",
   shortName: "Førde 2",
-  logo: "https://images.fotball.no/clublogos/918.png",
+  logo: "https://images.fotball.no/clublogos/952.png",
 };
 
 export const maloyTeam: Team = {
   id: "maloy",
   name: "Måløy",
   shortName: "Måløy",
-  logo: "https://images.fotball.no/clublogos/924.png",
+  logo: "https://images.fotball.no/clublogos/3275.png",
 };
 
 export const sandaneTeam: Team = {
   id: "sandane",
   name: "Sandane",
   shortName: "Sandane",
-  logo: "https://images.fotball.no/clublogos/929.png",
+  logo: "https://images.fotball.no/clublogos/977.png",
 };
 
 export const strynTeam: Team = {
   id: "stryn",
   name: "Stryn",
   shortName: "Stryn",
-  logo: "https://images.fotball.no/clublogos/935.png",
+  logo: "https://images.fotball.no/clublogos/981.png",
 };
 
 export const eidTeam: Team = {
   id: "eid",
   name: "Eid",
   shortName: "Eid",
-  logo: "https://images.fotball.no/clublogos/915.png",
+  logo: "https://images.fotball.no/clublogos/968.png",
 };
 
 // Upcoming matches - Sesong 2026
