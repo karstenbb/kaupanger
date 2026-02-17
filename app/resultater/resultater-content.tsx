@@ -52,7 +52,7 @@ export function ResultaterContent() {
   };
 
   return (
-    <div className="px-4 md:px-6 lg:px-8 space-y-6">
+    <div className="px-4 md:px-6 lg:px-8 space-y-6 max-w-4xl mx-auto">
       {/* Header */}
       <div className="flex flex-col items-center pt-4 pb-2">
         <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-gradient-to-br from-background-card to-background-elevated border-2 border-primary/30 flex items-center justify-center p-1">
@@ -110,7 +110,7 @@ export function ResultaterContent() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6"
           >
             {results.map((match, index) => (
               <ResultCard key={match.id} match={match} index={index} />
