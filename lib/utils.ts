@@ -41,19 +41,6 @@ export function getCountdown(dateString: string): {
   return { days, hours, minutes, seconds };
 }
 
-export function getResultColor(
-  homeScore: number,
-  awayScore: number,
-  isHome: boolean
-): "win" | "draw" | "loss" {
-  const ourScore = isHome ? homeScore : awayScore;
-  const theirScore = isHome ? awayScore : homeScore;
-
-  if (ourScore > theirScore) return "win";
-  if (ourScore < theirScore) return "loss";
-  return "draw";
-}
-
 export function getResultLabel(result: "win" | "draw" | "loss"): string {
   switch (result) {
     case "win":

@@ -91,21 +91,6 @@ export interface Season {
   endYear: number;
 }
 
-// Navigation types
-export type NavItem = {
-  id: string;
-  label: string;
-  href: string;
-  icon: string;
-};
-
 // Filter types
 export type MatchFilter = "all" | "home" | "away";
 export type RosterTab = "players" | "staff";
-
-// API Response types
-export interface ApiResponse<T> {
-  data: T;
-  success: boolean;
-  message?: string;
-}

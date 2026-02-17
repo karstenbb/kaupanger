@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Staff } from "@/types";
 import { ChevronRight } from "lucide-react";
-import { Route } from "next";
 
 interface StaffCardProps {
   staff: Staff;
@@ -14,7 +13,7 @@ interface StaffCardProps {
 
 export function StaffCard({ staff, index }: StaffCardProps) {
   return (
-    <Link href={`/tropp/staff/${staff.id}` as Route}>
+    <Link href={`/tropp/staff/${staff.id}`}>
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}

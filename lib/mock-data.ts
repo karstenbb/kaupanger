@@ -954,12 +954,6 @@ export const getPlayersByPosition = () => {
   };
 };
 
-// Filter matches
-export const filterMatches = (filter: "all" | "home" | "away") => {
-  if (filter === "all") return upcomingMatches;
-  return upcomingMatches.filter((m) => m.location === filter);
-};
-
 // Get results by season
 export const getResultsBySeason = (seasonId: string) => {
   return historicalMatches.filter((m) => m.season === seasonId);
