@@ -17,21 +17,21 @@ export function PlayerCard({ player, index }: PlayerCardProps) {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: index * 0.05 }}
-        className="flex items-center justify-between p-3 rounded-xl glass-card glass-card-hover cursor-pointer group"
+        className="flex items-center justify-between p-3 md:p-4 lg:p-5 rounded-xl glass-card glass-card-hover cursor-pointer group"
       >
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 md:gap-4">
           {/* Player Number Badge */}
-          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/40 to-secondary/30 backdrop-blur-sm border border-primary/30 flex items-center justify-center">
-            <span className="text-xl font-bold text-primary">#{player.number}</span>
+          <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-primary/40 to-secondary/30 backdrop-blur-sm border border-primary/30 flex items-center justify-center">
+            <span className="text-xl md:text-2xl lg:text-3xl font-bold text-primary">#{player.number}</span>
           </div>
 
           {/* Player Info */}
           <div className="flex flex-col">
-            <span className="font-semibold text-text-primary">
+            <span className="font-semibold text-sm md:text-base lg:text-lg text-text-primary">
               {player.firstName} {player.lastName}
             </span>
             <div className="flex items-center gap-2">
-              <span className="text-sm text-secondary-light">{player.positionLabel}</span>
+              <span className="text-xs md:text-sm text-secondary-light">{player.positionLabel}</span>
               {player.isInjured && (
                 <span className="text-xs text-status-injured">• {player.injuryNote}</span>
               )}
@@ -40,7 +40,7 @@ export function PlayerCard({ player, index }: PlayerCardProps) {
         </div>
 
         {/* Stats */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3 lg:gap-4">
           {player.appearances !== undefined && (
             <div className="flex flex-col items-center">
               <span className="text-lg font-bold text-text-primary">{player.appearances}</span>

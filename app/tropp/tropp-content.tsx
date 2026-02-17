@@ -80,23 +80,23 @@ export function TroppContent() {
   };
 
   return (
-    <div className="px-4 space-y-6">
+    <div className="px-4 md:px-6 lg:px-8 space-y-6">
       {/* Header */}
       <div className="flex flex-col items-center pt-4 pb-2 relative">
         <div className="relative">
-          <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border-2 border-primary/40 flex items-center justify-center p-1 shadow-glass">
+          <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-white/10 backdrop-blur-md border-2 border-primary/40 flex items-center justify-center p-1 shadow-glass">
             <Image
               src="/images/kil-logo.png"
               alt="K.I.L Logo"
-              width={72}
-              height={72}
+              width={128}
+              height={128}
               className="rounded-full object-contain"
             />
           </div>
-          <span className="absolute -top-1 left-1/2 -translate-x-1/2 text-xs text-primary font-semibold bg-white/10 backdrop-blur-sm px-2 py-0.5 rounded-full border border-primary/30">2025</span>
+          <span className="absolute -top-1 left-1/2 -translate-x-1/2 text-xs md:text-sm text-primary font-semibold bg-white/10 backdrop-blur-sm px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-primary/30">2025</span>
         </div>
-        <h1 className="text-xl font-bold gradient-text mt-4">K.I.L Fotball</h1>
-        <p className="text-sm text-text-secondary">Troppen</p>
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold gradient-text mt-4">K.I.L Fotball</h1>
+        <p className="text-sm md:text-base text-text-secondary">Troppen</p>
         
         {/* Menu button */}
         <DropdownMenu>

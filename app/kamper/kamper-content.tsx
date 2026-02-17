@@ -14,15 +14,15 @@ export function KamperContent() {
   const { data: matches, isLoading: matchesLoading } = useUpcomingMatches(matchFilter);
 
   return (
-    <div className="px-4 space-y-6">
+    <div className="px-4 md:px-6 lg:px-8 space-y-6">
       {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         className="flex items-center gap-2"
       >
-        <Calendar className="w-5 h-5 text-secondary-light" />
-        <h2 className="text-lg font-bold gradient-text">Kommende Kamper</h2>
+        <Calendar className="w-5 h-5 md:w-6 md:h-6 text-secondary-light" />
+        <h2 className="text-lg md:text-xl lg:text-2xl font-bold gradient-text">Kommende Kamper</h2>
       </motion.div>
 
       {/* Next Match Card */}
@@ -38,9 +38,9 @@ export function KamperContent() {
       <MatchFilterTabs filter={matchFilter} onFilterChange={setMatchFilter} />
 
       {/* Match List */}
-      <div className="space-y-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
         {matchesLoading ? (
-          <div className="flex items-center justify-center py-8">
+          <div className="flex items-center justify-center py-8 col-span-full">
             <Loader2 className="w-6 h-6 text-primary animate-spin" />
           </div>
         ) : matches && matches.length > 0 ? (
@@ -48,7 +48,7 @@ export function KamperContent() {
             <MatchListItem key={match.id} match={match} index={index} />
           ))
         ) : (
-          <p className="text-center text-text-secondary py-8">
+          <p className="text-center text-text-secondary py-8 col-span-full">
             Ingen kampar funne
           </p>
         )}

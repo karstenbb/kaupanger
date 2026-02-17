@@ -40,47 +40,47 @@ export function ResultCard({ match, index }: ResultCardProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.08 }}
       onClick={handleClick}
-      className="p-4 rounded-2xl glass-card glass-card-hover cursor-pointer active:scale-[0.98]"
+      className="p-4 md:p-5 lg:p-6 rounded-2xl glass-card glass-card-hover cursor-pointer active:scale-[0.98]"
     >
       {/* Header - Venue & Date */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <MapPin className="w-4 h-4 text-secondary-light" />
-          <span className="text-xs text-text-secondary uppercase tracking-wide">
+          <MapPin className="w-4 h-4 md:w-5 md:h-5 text-secondary-light" />
+          <span className="text-xs md:text-sm text-text-secondary uppercase tracking-wide">
             {match.venue}
           </span>
         </div>
-        <span className="text-xs text-text-muted">{formatDate(match.date)}</span>
+        <span className="text-xs md:text-sm text-text-muted">{formatDate(match.date)}</span>
       </div>
 
       {/* Score Section */}
       <div className="flex items-center justify-between">
         {/* K.I.L */}
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center overflow-hidden">
+        <div className="flex items-center gap-3 md:gap-4">
+          <div className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center overflow-hidden">
             <Image
               src="/images/kil-logo.png"
               alt="K.I.L"
-              width={36}
-              height={36}
+              width={64}
+              height={64}
               className="object-contain"
             />
           </div>
-          <span className="font-medium text-text-primary">K.I.L</span>
+          <span className="font-medium text-sm md:text-base lg:text-lg text-text-primary">K.I.L</span>
         </div>
 
         {/* Score */}
-        <div className="flex items-center gap-3">
-          <span className="text-2xl font-bold gradient-text">{kilScore}</span>
-          <span className="text-text-muted">-</span>
-          <span className="text-2xl font-bold text-text-primary">{opponentScore}</span>
+        <div className="flex items-center gap-3 md:gap-4">
+          <span className="text-2xl md:text-3xl lg:text-4xl font-bold gradient-text">{kilScore}</span>
+          <span className="text-base md:text-lg lg:text-xl text-text-muted">-</span>
+          <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary">{opponentScore}</span>
         </div>
 
         {/* Opponent */}
-        <div className="flex items-center gap-3">
-          <span className="font-medium text-text-primary text-right">{opponent.shortName}</span>
-          <div className="w-10 h-10 rounded-full bg-secondary/30 backdrop-blur-sm border border-secondary/40 flex items-center justify-center">
-            <span className="text-sm font-bold text-secondary-light">
+        <div className="flex items-center gap-3 md:gap-4">
+          <span className="font-medium text-sm md:text-base lg:text-lg text-text-primary text-right">{opponent.shortName}</span>
+          <div className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-secondary/30 backdrop-blur-sm border border-secondary/40 flex items-center justify-center">
+            <span className="text-sm md:text-base lg:text-lg font-bold text-secondary-light">
               {opponent.shortName.substring(0, 2).toUpperCase()}
             </span>
           </div>
@@ -90,7 +90,7 @@ export function ResultCard({ match, index }: ResultCardProps) {
       {/* Result Badge */}
       <div className="flex justify-center items-center mt-4 gap-2">
         <span
-          className={`px-4 py-1 rounded-full text-xs font-semibold backdrop-blur-sm ${
+          className={`px-4 md:px-5 lg:px-6 py-1 md:py-1.5 rounded-full text-xs md:text-sm font-semibold backdrop-blur-sm ${
             match.result === "win" ? "badge-win" : 
             match.result === "loss" ? "badge-loss" : 
             "badge-draw"

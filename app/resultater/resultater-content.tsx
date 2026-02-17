@@ -52,28 +52,28 @@ export function ResultaterContent() {
   };
 
   return (
-    <div className="px-4 space-y-6">
+    <div className="px-4 md:px-6 lg:px-8 space-y-6">
       {/* Header */}
       <div className="flex flex-col items-center pt-4 pb-2">
-        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-background-card to-background-elevated border-2 border-primary/30 flex items-center justify-center p-1">
+        <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-gradient-to-br from-background-card to-background-elevated border-2 border-primary/30 flex items-center justify-center p-1">
           <Image
             src="/images/kil-logo.png"
             alt="K.I.L Logo"
-            width={72}
-            height={72}
+            width={128}
+            height={128}
             className="rounded-full object-contain"
           />
         </div>
-        <h1 className="text-xl font-bold text-text-primary mt-4">K.I.L Fotball</h1>
-        <p className="text-sm text-text-secondary uppercase tracking-wide">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-text-primary mt-4">K.I.L Fotball</h1>
+        <p className="text-sm md:text-base text-text-secondary uppercase tracking-wide">
           Resultater 4. divisjon
         </p>
       </div>
 
       {/* Season Selector */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 md:gap-4">
         <div className="flex items-center gap-2 text-text-secondary">
-          <Calendar className="w-4 h-4" />
+          <Calendar className="w-4 h-4 md:w-5 md:h-5" />
         </div>
         <Select value={selectedSeason} onValueChange={setSelectedSeason}>
           <SelectTrigger className="flex-1">
@@ -88,7 +88,7 @@ export function ResultaterContent() {
           </SelectContent>
         </Select>
         <Button variant="outline" size="icon" className="shrink-0">
-          <Filter className="w-4 h-4" />
+          <Filter className="w-4 h-4 md:w-5 md:h-5" />
         </Button>
       </div>
 
@@ -110,7 +110,7 @@ export function ResultaterContent() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="space-y-4"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6"
           >
             {results.map((match, index) => (
               <ResultCard key={match.id} match={match} index={index} />

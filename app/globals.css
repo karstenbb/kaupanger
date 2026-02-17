@@ -75,6 +75,12 @@
     padding-bottom: 6rem;
     min-height: 100vh;
   }
+  
+  @media (min-width: 768px) {
+    .page-container {
+      padding-bottom: 2rem;
+    }
+  }
 
   /* Glass card styles */
   .glass-card {

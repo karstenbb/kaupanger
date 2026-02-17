@@ -21,23 +21,23 @@ interface HeaderProps {
 
 export function Header({ title, subtitle, showLogo = true }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between p-4">
-      <div className="flex items-center gap-3">
+    <header className="flex items-center justify-between p-4 md:p-6 lg:p-8">
+      <div className="flex items-center gap-3 md:gap-4">
         {showLogo && (
-          <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+          <div className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
             <Image
               src="/images/kil-logo.png"
               alt="K.I.L Logo"
-              width={40}
-              height={40}
+              width={64}
+              height={64}
               className="object-contain"
             />
           </div>
         )}
         <div>
-          <h1 className="text-xl font-bold gradient-text">{title}</h1>
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold gradient-text">{title}</h1>
           {subtitle && (
-            <p className="text-xs text-text-secondary">{subtitle}</p>
+            <p className="text-xs md:text-sm text-text-secondary">{subtitle}</p>
           )}
         </div>
       </div>
