@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Match } from "@/types";
 import { getCountdown } from "@/lib/utils";
-import { MapPin } from "lucide-react";
+import { MapPin, ExternalLink } from "lucide-react";
 import { useWeather } from "@/lib/api";
 import { getWeatherEmoji } from "@/types/weather";
 
@@ -27,12 +27,19 @@ export function NextMatchCard({ match }: NextMatchCardProps) {
 
   const isHome = match.location === "home";
 
+  const handleClick = () => {
+    if (match.fiksId) {
+      window.open(`https://www.fotball.no/fotballdata/kamp/?fiksId=${match.fiksId}`, "_blank");
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative overflow-hidden rounded-3xl glass-card"
+      onClick={handleClick}
+      className="relative overflow-hidden rounded-3xl glass-card cursor-pointer active:scale-[0.99]"
     >
       {/* Header with live indicator */}
       <div className="flex items-center justify-between p-4 md:p-5 lg:p-6 pb-2">
@@ -114,6 +121,7 @@ export function NextMatchCard({ match }: NextMatchCardProps) {
       <div className="flex items-center justify-center gap-2 px-4 md:px-6 lg:px-8 pb-4 md:pb-5 lg:pb-6 text-secondary-light text-sm md:text-base">
         <MapPin className="w-4 h-4 md:w-5 md:h-5" />
         <span>{match.venue}</span>
+        <ExternalLink className="w-4 h-4 md:w-5 md:h-5 text-primary/60" />
       </div>
     </motion.div>
   );

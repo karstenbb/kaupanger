@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Match } from "@/types";
 import { formatDate, getDayOfWeek } from "@/lib/utils";
-import { MapPin } from "lucide-react";
+import { MapPin, ExternalLink } from "lucide-react";
 
 interface MatchListItemProps {
   match: Match;
@@ -18,12 +18,19 @@ export function MatchListItem({ match, index }: MatchListItemProps) {
   const leftTeam = match.homeTeam;
   const rightTeam = match.awayTeam;
 
+  const handleClick = () => {
+    if (match.fiksId) {
+      window.open(`https://www.fotball.no/fotballdata/kamp/?fiksId=${match.fiksId}`, "_blank");
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.3, delay: index * 0.1 }}
-      className="p-4 md:p-5 lg:p-6 rounded-2xl glass-card glass-card-hover"
+      onClick={handleClick}
+      className="p-4 md:p-5 lg:p-6 rounded-2xl glass-card glass-card-hover cursor-pointer active:scale-[0.98]"
     >
       {/* Date and location badge */}
       <div className="flex items-center justify-between mb-3 md:mb-4">
@@ -97,6 +104,7 @@ export function MatchListItem({ match, index }: MatchListItemProps) {
       <div className="flex items-center justify-center gap-1 mt-3 md:mt-4 text-xs md:text-sm text-text-secondary">
         <MapPin className="w-3 h-3 md:w-4 md:h-4" />
         <span>{match.venue}</span>
+        <ExternalLink className="w-3 h-3 md:w-4 md:h-4 ml-1 text-primary/60" />
       </div>
     </motion.div>
   );
